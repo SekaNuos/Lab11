@@ -1,0 +1,13 @@
+table, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.employeeTable{
+    position: absolute;
+    top: 0;
+    left: 120px;
+}
+tr, td {
+    padding: 10px;
+    text-align: left;
+}

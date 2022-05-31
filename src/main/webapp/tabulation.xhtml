@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head>
+        <title>Tabulation</title>
+        <h:outputStylesheet library="css" name="style.css"/>
+    </h:head>
+    <h:body>
+        <h:outputText value="Min value:"/> <br/>
+        <h:outputText value="x = #{tabulateBean.min().x}"/> <br/>
+        <h:outputText value="y = #{tabulateBean.min().y}"/> <br/>
+        <h:outputText value="index: #{tabulateBean.min_index()}"/> <br/>
+
+        <h:outputText value="Max value:"/> <br/>
+        <h:outputText value="x = #{tabulateBean.max().x}"/> <br/>
+        <h:outputText value="y = #{tabulateBean.max().y}"/> <br/>
+        <h:outputText value="index: #{tabulateBean.max_index()}"/><br/> <br/>
+
+        <h:outputText value="Sum = #{tabulateBean.sum()}"/> <br/>
+        <h:outputText value="Avg = #{tabulateBean.avg()}"/> <br/> <br/>
+        <h:dataTable value="#{tabulateBean.points}" var="p" styleClass = "employeeTable">
+            <h:column>
+                <f:facet name="header">X</f:facet>
+                #{p.x}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Y</f:facet>
+                #{p.y}
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</f:view>
+</html>
+
